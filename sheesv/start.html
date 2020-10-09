@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
 </head>
 <body class="mdui-drawer-body-left">
-    <div class="mdui-drawer" id="left-drawer">
-        <button class="mdui-btn" mdui-drawer-close>close</button>
+    <div class="mdui-drawer mdui-color-white" id="left-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}">
-            <div class="mdui-collapse-item">
+            <button class="mdui-ripple mdui-btn" mdui-drawer-close style="font-size:larger ; font-weight: bold; margin-left: 5%;" overlay="true">BDN</button>
+            <div class="mdui-collapse-item mdui-collapse-item-open">
                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">insert_drive_file</i>
                     <div class="mdui-list-item-content">SheeSV文档</div>
                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>
                 <div class="mdui-collapse-item-body mdui-list">
-                    <a class="mdui-list-item mdui-ripple" href="./sheesv">
+                    <a class="mdui-list-item mdui-ripple" href="../">
                         主页
                     </a>
-                    <a class="mdui-list-item mdui-ripple" href="./sheesv/start">
+                    <a class="mdui-list-item mdui-ripple mdui-text-color-green" href="#">
                         开始使用
                     </a>    
                 </div>
@@ -31,7 +31,7 @@
     </div>
     <div class="mdui-toolbar mdui-color-theme mdui-color-black">
         <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></button>
-        <span class="mdui-typo-title">BDN</span>
+        <a class="mdui-typo-title" href="..">BDN</a>
         <div class="mdui-toolbar-spacer"></div>
         <button onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></button>
         <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon">

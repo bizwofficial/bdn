@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
 </head>
 <body class="mdui-drawer-body-left">
-    <div class="mdui-drawer" id="left-drawer">
-        <button class="mdui-btn" mdui-drawer-close>close</button>
+    <div class="mdui-drawer mdui-color-white" id="left-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}">
+            <button class="mdui-ripple mdui-btn" mdui-drawer-close style="font-size:larger ; font-weight: bold; margin-left: 5%;" overlay="true">BDN</button>
             <div class="mdui-collapse-item">
                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">insert_drive_file</i>
@@ -31,7 +31,7 @@
     </div>
     <div class="mdui-toolbar mdui-color-theme mdui-color-black">
         <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></button>
-        <span class="mdui-typo-title">BDN</span>
+        <a class="mdui-typo-title" href=".">BDN</a>
         <div class="mdui-toolbar-spacer"></div>
         <button onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></button>
         <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon">
@@ -45,6 +45,19 @@
                 </path>
             </svg>
         </button>
+    </div>
+
+    <!--正文-->
+    <div style="width: 90%; margin: 0 auto; margin-top: 5%;">
+        <div class="mdui-typo">
+            <h1 class="mdui-hoverable" style="width: max-content; display: table; margin: 0 auto; font-weight: bolder;">Bridgman Developer Network</h1>
+            <h2 class="mdui-hoverable" style="width: max-content;">概述</h2>
+            <p class="mdui-hoverable">
+                欢迎来到Bridgman Developer Network！这是一个由Bridgman创建的代码与文档共享平台。
+                要开始使用，请点击页面左上角的<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">menu</i></button>
+                图标打开侧边栏（在屏幕较窄的设备或移动设备上可能已经显示），并选择您感兴趣的主题。
+            </p>
+        </div>    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
 </body>
