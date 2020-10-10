@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
 </head>
 <body class="mdui-drawer-body-left">
+    <!--标题栏与菜单-->
     <div class="mdui-drawer mdui-color-white" id="left-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}">
             <button class="mdui-ripple mdui-btn" mdui-drawer-close style="font-size:larger ; font-weight: bold; margin-left: 5%;" overlay="true">BDN</button>
@@ -19,10 +20,10 @@
                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>
                 <div class="mdui-collapse-item-body mdui-list">
-                    <a class="mdui-list-item mdui-ripple" href="../">
+                    <a class="mdui-list-item mdui-ripple" href="./">
                         主页
                     </a>
-                    <a class="mdui-list-item mdui-ripple mdui-text-color-green" href="#">
+                    <a class="mdui-list-item mdui-ripple mdui-text-color-green mdui-list-item-active" href="#">
                         开始使用
                     </a>    
                 </div>
@@ -30,11 +31,11 @@
         </div>
     </div>
     <div class="mdui-toolbar mdui-color-theme mdui-color-black">
-        <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></button>
-        <a class="mdui-typo-title" href="..">BDN</a>
+        <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '浏览主题'}"><i class="mdui-icon material-icons">menu</i></button>
+        <a class="mdui-btn mdui-typo-title mdui-hoverable mdui-ripple mdui-ripple-white" href=".." mdui-tooltip="{content: 'Bridgman Developer Network'}">B<span class="mdui-typo mdui-text-color-white-secondary">ridgman</span> D<span class="mdui-typo mdui-text-color-white-secondary">eveloper</span> N<span class="mdui-typo mdui-text-color-white-secondary">etwork</span></a>
         <div class="mdui-toolbar-spacer"></div>
-        <button onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></button>
-        <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon">
+        <button onclick="location.reload();" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '重新加载'}"><i class="mdui-icon material-icons">refresh</i></button>
+        <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: 'GitHub页面'}">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
                 <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
                     c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
@@ -46,6 +47,8 @@
             </svg>
         </button>
     </div>
+
+    <!--正文-->
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
 </body>
 </html>

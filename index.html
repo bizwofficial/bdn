@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
 </head>
 <body class="mdui-drawer-body-left">
+    <!--标题栏与菜单-->
     <div class="mdui-drawer mdui-color-white" id="left-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}">
             <button class="mdui-ripple mdui-btn" mdui-drawer-close style="font-size:larger ; font-weight: bold; margin-left: 5%;" overlay="true">BDN</button>
@@ -30,11 +31,11 @@
         </div>
     </div>
     <div class="mdui-toolbar mdui-color-theme mdui-color-black">
-        <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></button>
-        <a class="mdui-typo-title" href=".">BDN</a>
+        <button mdui-drawer="{target: '#left-drawer', swipe: true}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '浏览主题'}"><i class="mdui-icon material-icons">menu</i></button>
+        <a class="mdui-btn mdui-typo-title mdui-hoverable mdui-ripple mdui-ripple-white" href="." mdui-tooltip="{content: 'Bridgman Developer Network'}">B<span class="mdui-typo mdui-text-color-white-secondary">ridgman</span> D<span class="mdui-typo mdui-text-color-white-secondary">eveloper</span> N<span class="mdui-typo mdui-text-color-white-secondary">etwork</span></a>
         <div class="mdui-toolbar-spacer"></div>
-        <button onclick="location.reload();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></button>
-        <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon">
+        <button onclick="location.reload();" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '重新加载'}"><i class="mdui-icon material-icons">refresh</i></button>
+        <button onclick="location.href='https://github.com/bizwofficial';" style="vertical-align: center;" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: 'GitHub页面'}">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
                 <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
                     c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
@@ -57,6 +58,54 @@
                 要开始使用，请点击页面左上角的<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">menu</i></button>
                 图标打开侧边栏（在屏幕较窄的设备或移动设备上可能已经显示），并选择您感兴趣的主题。
             </p>
+            <h2 class="mdui-hoverable" style="width: max-content;">仓库索引</h2>
+            <p class="mdui-hoverable">
+                BDN包括一些实践和库文档。部分主题（含计划中的项目）如下，您可以据此浏览对应的仓库/说明：
+            </p>
+            <div class="mdui-table-fluid mdui-hoverable">
+                <table class="mdui-table mdui-table-hoverable mdui-table-selectable">
+                  <thead>
+                    <tr>
+                      <th class="mdui-hoverable mdui-ripple">#</th>
+                      <th class="mdui-hoverable mdui-ripple">主题</th>
+                      <th class="mdui-hoverable mdui-ripple">参考地址</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="mdui-hoverable mdui-ripple">1</td>
+                      <td class="mdui-hoverable mdui-ripple">SheeSV</td>
+                      <td class="mdui-hoverable mdui-ripple"><a href="https://github.com/bizwofficial/sheesv">https://github.com/bizwofficial/sheesv</a></td>
+                    </tr>
+                    <tr>
+                      <td class="mdui-hoverable mdui-ripple">2</td>
+                      <td class="mdui-hoverable mdui-ripple">PlKiller Windows</td>
+                      <td class="mdui-hoverable mdui-ripple"><a href="https://github.com/bizwofficial/plkiller-windows">https://github.com/bizwofficial/plkiller-windows</a></td>
+                    </tr>
+                    <tr>
+                      <td class="mdui-hoverable mdui-ripple">3</td>
+                      <td class="mdui-hoverable mdui-ripple">Novel In Image</td>
+                      <td class="mdui-hoverable mdui-ripple"><a href="https://github.com/3150601355/Novel_In_Image">https://github.com/3150601355/Novel_In_Image</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <h2 class="mdui-hoverable" style="width: max-content;">离线版本</h2>
+            <p class="mdui-hoverable">
+                BDN全站提供离线版本。站内跳转链接均使用相对链接，您可以下载并在您的设备或服务器上使用。
+                请注意：当未部署在服务器时，部分浏览器可能无法正常跳转。
+                而且如果想要实现完全离线，您还需要从<a href="https://mdui.org/docs/download">MDUI官网</a>下载离线版本的JS/CSS文件。
+            </p>
+            <div class="mdui-container mdui-p-t-5">
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-ripple-white mdui-color-black" mdui-menu="{target: '#down_menu'}">下载BDN</button>
+                <ul class="mdui-menu" id="down_menu">
+                    <li class="mdui-menu-item">
+                        <a href="https://github.com/bizwofficial/bdn/archive/master.zip" class="mdui-ripple">
+                            <i class="mdui-menu-item-icon mdui-icon material-icons">file_download</i>
+                        </a>
+                    </li>
+                </ul>    
+            </div>
         </div>    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
