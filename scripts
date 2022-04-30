@@ -1,0 +1,55 @@
+benchmark脚本
+curl -LsO git.io/bench.sh; chmod +x bench.sh && ./bench.sh -a share
+
+测速 bash <(curl -Lso- http://yun.789888.xyz/speedtest.sh)
+
+SS四合一脚本
+wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+
+SS终极脚本 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ss-go.sh && chmod +x ss-go.sh && bash ss-go.sh
+
+Vmess
+bash <(curl -sL https://storage.googleapis.com/tiziblog/setup.sh)
+
+MTP curl -s -o mtproxy.sh https://raw.githubusercontent.com/ellermister/mtproxy/master/mtproxy.sh && chmod +x mtproxy.sh && bash mtproxy.sh
+
+vless一键 wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/dev/install.sh" && chmod +x install.sh && bash install.sh
+
+书生转发广日隧道 bash <(curl -sSL "https://www.shuscloud.com/modules/servers/PortForwardGoClient/static/script/securetunnel.php?id=1416&rules=7533")
+
+warp脚本 git.io/warp.sh
+
+wget -N https://cdn.jsdelivr.net/gh/kkkyg/CFwarp/CFwarp.sh && bash CFwarp.sh
+
+IPv6优先 grep -qE '^[ ]*label[ ]*2002::/16[ ]*2' /etc/gai.conf || echo 'label 2002::/16   2' | sudo tee -a /etc/gai.conf
+
+流媒体检测 bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
+
+SS+Cloak+BBR curl -o Cloak-Installer.sh -L https://git.io/fj5mh && bash Cloak-Installer.sh
+
+Haproxy中转 wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/doubi/master/haproxy.sh && chmod +x haproxy.sh && bash haproxy.sh
+
+限制只有某一个IP才能远程登录服务器
+vi /etc/hosts.deny #在其中加入sshd:ALL
+vi /etc/hosts.allow #在其中进行如下设置：sshd:192.168.1.1 #(只允许192.168.1.1这个IP远程登录服务器)
+最后重启ssh服务：service sshd restart
+
+Snell一键 wget --no-check-certificate -O snell.sh https://raw.githubusercontent.com/primovist/snell.sh/master/snell.centos.sh
+vi /etc/snell/snell-server.conf
+
+Dnsmasq一键 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -f
+
+WARP自动换ip wget https://github.com/luoxue-bot/warp_auto_change_ip/raw/main/warp_change_ip.sh && chmod +x warp_change_ip.sh && ./warp_change_ip.sh
+
+BT Client Aria2 https://git.io/aria2.sh
+
+iptables放行端口
+
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
+
+rclone挂载
+yum install fuse
+rclone mount gd: /gd --copy-links --allow-other --allow-non-empty --umask 000 --daemon --vfs-cache-mode writes
