@@ -8,6 +8,7 @@ MEDIA_SUFFIXES = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif',
     '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.pdf')
 
 autofill_schema = lambda url_list: ['http:'+each if each.startswith('//') else each for each in url_list]
+autofill_uri = lambda uri, url_list: [(uri[:-1]+each if uri.endswith('/') else uri+each) if each.startswith("/") else each for each in url_list]
 
 def geturls(uri: str, headers: dict, autofill=False, proxy=False, http_proxy='', https_proxy=''):
     try:
@@ -26,7 +27,7 @@ def geturls(uri: str, headers: dict, autofill=False, proxy=False, http_proxy='',
     lines = ''.join(raw_list).split('\n')
     # print(lines)
 
-    keywords = ["'//", "'http://", "'https://"]
+    keywords = ["'/", "'//", "'http://", "'https://"]
     for keyword in keywords:
         for line in lines:
             while line.find(keyword) != -1 and line.find("'",len(keyword)) != -1:
@@ -45,7 +46,13 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
     def core(uri: str, **other_para_of_geturls):
         nonlocal urls
         try:
-            current_urls = list(filter(lambda url: url_key in url, set(geturls(uri, **other_para_of_geturls)).difference(urls)))
+            current_urls = list(filter(lambda url: url_key in url, set(autofill_uri(uri, geturls(uri, **other_para_of_geturls))).difference(urls)))
+            for each in current_urls:
+                if each.startswith("'/"):
+                    if uri.endswith('/'):
+                        each = uri[:-1] + each
+                    else:
+                        each = uri + each
             print(f'current_urls = {current_urls}')
             if current_urls:
                 urls = urls.union(current_urls)
@@ -67,7 +74,7 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
     return urls
 
 if __name__ == '__main__':
-    result = list(geturls_recur('rdfz.cn', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
+    result = list(geturls_recur('xf.gl', 'https://xf.gl', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'}, autofill=True, proxy=True,  http_proxy='http://127.0.0.1:7890', https_proxy='http://127.0.0.1:7890'))
     with open('result.txt', 'w', encoding='utf-8') as fil:
         for each in result:
             print(each, file=fil)
