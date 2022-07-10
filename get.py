@@ -1,7 +1,13 @@
 import requests
 import copy
 
-test = BaseException()
+MEDIA_SUFFIXES = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif',
+    '.tiff', '.mp3', '.mp4', '.wmv', '.aac', '.webp', '.m3u', 
+    '.m3u8', '.avi', '.mov', '.asf', '.rm', '.mpeg', '.mpg', '.qt',
+    '.ram', '.dat', '.rmvb', '.ra', '.viv', '.asf', '.iso', '.bin',
+    '.exe', '.img', '.tao', '.dao', '.cif', '.fcd', '.swf', '.flash', 
+    '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.pdf')
+
 autofill_schema = lambda url_list: ['http:'+each if each.startswith('//') else each for each in url_list]
 
 def geturls(uri: str, headers: dict, autofill=False, proxy=False, http_proxy='', https_proxy=''):
@@ -44,8 +50,14 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
         if current_urls:
             urls = urls.union(current_urls)
             for each in current_urls:
-                under = core(each, **other_para_of_geturls)
-                if under:   urls = urls.union(under)
+                mark = True
+                for suffix in MEDIA_SUFFIXES:
+                    if each.endswith(suffix) or each.endswith(suffix.upper()):
+                        mark = False
+                        break
+                if mark:
+                    under = core(each, **other_para_of_geturls)
+                    if under:   urls = urls.union(under)
         else:
             print(f'Layer returned: {urls}')
             return urls
@@ -53,6 +65,6 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
     return core(uri, **other_para_of_geturls)
 
 if __name__ == '__main__':
-    result = list(geturls_recur('sina', 'https://news.sina.com.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
+    result = list(geturls_recur('rdfz', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
     with open('result.txt', 'w') as fil:
         print(*result, file=fil, sep='\n')
