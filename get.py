@@ -1,5 +1,4 @@
 import requests
-import copy
 
 MEDIA_SUFFIXES = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif',
     '.tiff', '.mp3', '.mp4', '.wmv', '.aac', '.webp', '.m3u', 
@@ -69,5 +68,6 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
 
 if __name__ == '__main__':
     result = list(geturls_recur('rdfz.cn', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
-    with open('result.txt', 'w') as fil:
-        print(*result, file=fil, sep='\n')
+    with open('result.txt', 'w', encoding='utf-8') as fil:
+        for each in result:
+            print(each, file=fil)
