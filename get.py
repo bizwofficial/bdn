@@ -32,7 +32,7 @@ def geturls(uri: str, headers: dict, autofill=False, proxy=False, http_proxy='',
         for line in lines:
             while line.find(keyword) != -1 and line.find("'",len(keyword)) != -1:
                 urls.append(keyword[1:]+line[line.find(keyword)+len(keyword):line.find("'",line.find(keyword)+1)])
-                line = line[line.find("'",line.find(keyword)+1):]
+                line = line[line.find("'",line.find(keyword)+len(keyword)):]
 
     # print(urls)
     if autofill:
@@ -47,12 +47,6 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
         nonlocal urls
         try:
             current_urls = list(filter(lambda url: url_key in url, set(autofill_uri(uri, geturls(uri, **other_para_of_geturls))).difference(urls)))
-            for each in current_urls:
-                if each.startswith("'/"):
-                    if uri.endswith('/'):
-                        each = uri[:-1] + each
-                    else:
-                        each = uri + each
             print(f'current_urls = {current_urls}')
             if current_urls:
                 urls = urls.union(current_urls)
