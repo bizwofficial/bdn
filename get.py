@@ -61,10 +61,11 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
                         if under:   urls = urls.union(under)
             else:
                 print(f'Layer returned: {urls}')
-        except TypeError:
+        except:
             pass
 
-    return core(uri, **other_para_of_geturls)
+    core(uri, **other_para_of_geturls)
+    return urls
 
 if __name__ == '__main__':
     result = list(geturls_recur('rdfz.cn', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
