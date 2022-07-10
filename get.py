@@ -1,12 +1,15 @@
 import requests
 
 MEDIA_SUFFIXES = (
-    '.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif',
+    '.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif', '.m4a', '.webm',
+    '.flv', '.gifv', '.mng', '.m4v', '.flac', '.app', '.psd', '.sh',
     '.tiff', 'ico', '.mp3', '.mp4', '.wmv', '.aac', '.webp', '.m3u', 
     '.m3u8', '.avi', '.mov', '.asf', '.rm', '.mpeg', '.mpg', '.qt',
     '.ram', '.dat', '.rmvb', '.ra', '.viv', '.asf', '.iso', '.bin',
     '.exe', '.img', '.tao', '.dao', '.cif', '.fcd', '.swf', '.flash', 
-    '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.pdf', '.m4a')
+    '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.pdf', '.wav',
+    '.zip', '.7z', '.rar', '.gz', '.xz', '.tar', '.deb', '.o', '.mpe', 
+    '.ogg', '.mpv', '.m4p', '.mp2')
 
 autofill_schema = lambda url_list: ['http:'+each if each.startswith('//') else each for each in url_list]
 autofill_uri = lambda uri, url_list: [(uri[:-1]+each if uri.endswith('/') else uri+each) if each.startswith("/") else each for each in url_list]
