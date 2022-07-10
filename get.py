@@ -51,7 +51,7 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
         try:
             current_urls = list(filter(lambda url: url_key in url, set(autofill_uri(uri, geturls(uri, **other_para_of_geturls))).difference(urls)))
             for i, each in enumerate(current_urls):
-                if each.endswith('>'):
+                if each.endswith('>') or each.endswith('\\'):
                     current_urls[i] = each[:-1]
             print(f'current_urls = {current_urls}')
             if current_urls:
@@ -74,7 +74,7 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
     return urls
 
 if __name__ == '__main__':
-    result = list(geturls_recur('rdfz.cn', 'https://www.rdfz.cn', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'}, autofill=True, proxy=False))
+    result = list(geturls_recur('cloud.tencent.com', 'https://cloud.tencent.com', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'}, autofill=True, proxy=False))
     with open('result.txt', 'w', encoding='utf-8') as fil:
         for each in result:
             print(each, file=fil)
