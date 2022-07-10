@@ -16,7 +16,7 @@ def geturls(uri: str, headers: dict, autofill=False, proxy=False, http_proxy='',
             raw = requests.get(uri,headers=headers,proxies={'http': http_proxy, 'https': https_proxy}).text
         else:
             raw = requests.get(uri, headers=headers).text
-    except Exception:
+    except:
         return []
     raw_list = list(raw)
     urls = []
@@ -56,8 +56,11 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
                         mark = False
                         break
                 if mark:
-                    under = core(each, **other_para_of_geturls)
-                    if under:   urls = urls.union(under)
+                    try:
+                        under = core(each, **other_para_of_geturls)
+                        if under:   urls = urls.union(under)
+                    except TypeError:
+                        pass
         else:
             print(f'Layer returned: {urls}')
             return urls
