@@ -65,6 +65,6 @@ def geturls_recur(url_key:str, uri: str, **other_para_of_geturls):
     return core(uri, **other_para_of_geturls)
 
 if __name__ == '__main__':
-    result = list(geturls_recur('rdfz', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
+    result = list(geturls_recur('rdfz.cn', 'https://www.rdfz.cn', headers={'User-Agent': 'curl/7.29.0'}, autofill=True, proxy=False))
     with open('result.txt', 'w') as fil:
         print(*result, file=fil, sep='\n')
