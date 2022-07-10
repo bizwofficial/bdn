@@ -1,7 +1,7 @@
 import requests
 
 MEDIA_SUFFIXES = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif',
-    '.tiff', '.mp3', '.mp4', '.wmv', '.aac', '.webp', '.m3u', 
+    '.tiff', 'ico', '.mp3', '.mp4', '.wmv', '.aac', '.webp', '.m3u', 
     '.m3u8', '.avi', '.mov', '.asf', '.rm', '.mpeg', '.mpg', '.qt',
     '.ram', '.dat', '.rmvb', '.ra', '.viv', '.asf', '.iso', '.bin',
     '.exe', '.img', '.tao', '.dao', '.cif', '.fcd', '.swf', '.flash', 
