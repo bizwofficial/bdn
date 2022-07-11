@@ -7,7 +7,7 @@ V2B_REG_REL_URL = '/api/v1/passport/auth/register'
 # V2B_SUB_REL_URL = '/api/v1/user/getSubscribe'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'
 
-home_url = 'https://sub.chbjpw.mobi'
+home_url = 'https://xf.gl'
 times = 100
 proxies = {
     'http': 'http://127.0.0.1:7890',
